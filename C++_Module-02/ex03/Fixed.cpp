@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sayar <sayar <sayar@student.42.fr>         +#+  +:+       +#+        */
+/*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:52:48 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/02 15:25:56 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/02 23:35:30 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,13 +182,11 @@ int		Fixed::toInt(void) const
 
 Fixed::Fixed(const int integer)
 {
-	std::cout << "Int constructor called" << std::endl;
 	this->integer = roundf(integer * (1 << Fixed::s_integer));
 }
 
 Fixed::Fixed(const float integer)
 {
-	std::cout << "Float constructor called" << std::endl;
 	this->integer = roundf(integer * (1 << Fixed::s_integer));
 }
 

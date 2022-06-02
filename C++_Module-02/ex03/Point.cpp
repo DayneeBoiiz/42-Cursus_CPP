@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sayar <sayar <sayar@student.42.fr>         +#+  +:+       +#+        */
+/*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 13:06:31 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/02 16:36:43 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/02 23:44:51 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point(void) : x(0), y(0)
+Point::Point(void)
 {
 }
 
@@ -36,7 +36,7 @@ Point::~Point(void)
 
 float	Point::area(Point const &a, Point const &b, Point const &c)
 {
-	return (0.5 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)));
+	return (0.5 * (a.x.getRawBits() * (b.y.getRawBits() - c.y.getRawBits()) + b.x.getRawBits() * (c.y.getRawBits() - a.y.getRawBits()) + c.x.getRawBits() * (a.y.getRawBits() - b.y.getRawBits())));
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)

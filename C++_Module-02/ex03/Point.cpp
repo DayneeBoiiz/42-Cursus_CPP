@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 13:06:31 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/02 23:44:51 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/04 22:08:28 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	if (area < 0)
 		area *= -1;
 
+	if (d1 == 0 || d2 == 0 || d3 == 0)
+		return (false);
 	pos_area = d1 + d2 + d3;
 	if ((pos_area) == area)
 		return (true);

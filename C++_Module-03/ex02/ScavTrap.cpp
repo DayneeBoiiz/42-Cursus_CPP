@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 23:28:24 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/06 16:15:34 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/06 16:35:17 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,4 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 void    ScavTrap::guardGate(void)
 {
     std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
-}
-
-ScavTrap::~ScavTrap(void)
-{
-	std::cout << "'ScavTrap' Destructor called" << std::endl;
 }

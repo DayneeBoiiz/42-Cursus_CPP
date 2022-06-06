@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:29:47 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/06 16:13:02 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/06 16:40:33 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(void)
 {
-    std::cout << "'ClapTrap' Default consructor called" << std::endl;
+    std::cout << "'Claptrap' Default consructor called" << std::endl;
     this->name = "";
     this->health = 10;
     this->energy = 10;
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap(void)
 
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "'ClapTrap' name constructor called" << std::endl;
+    std::cout << "Name constructor called" << std::endl;
     this->name = name;
     this->attack_dmg = 0;
     this->health = 10;

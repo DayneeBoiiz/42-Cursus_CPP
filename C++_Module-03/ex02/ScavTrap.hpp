@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 23:27:40 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/06 16:14:33 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/05 00:15:09 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ public:
     ScavTrap(void);
     ScavTrap(std::string name);
     void guardGate(void);
-	~ScavTrap(void);
 };
 
 #endif

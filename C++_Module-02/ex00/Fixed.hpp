@@ -6,7 +6,7 @@
 /*   By: sayar <sayar <sayar@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 21:40:47 by sayar             #+#    #+#             */
-/*   Updated: 2022/05/28 22:12:19 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/07 17:25:37 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	Fixed(void);
 	Fixed(const Fixed& _Fixed);
 	Fixed & operator = (const Fixed& _Fixed);
-	~Fixed();
+	~Fixed(void);
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
 };

@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:24:18 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/06 18:12:57 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/25 12:49:56 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ FragTrap::FragTrap(void)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "'FragTrap' Default destructor called" << std::endl;
+	std::cout << "'FragTrap' destructor called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name)

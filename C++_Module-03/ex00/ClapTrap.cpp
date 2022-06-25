@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:29:47 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/05 00:11:00 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/25 11:56:55 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,23 @@ ClapTrap::ClapTrap(std::string name)
     this->attack_dmg = 0;
     this->health = 10;
     this->energy = 10;
+}
+
+ClapTrap & ClapTrap::operator=(const ClapTrap& _clap)
+{
+	this->name = _clap.name;
+	this->attack_dmg = _clap.attack_dmg;
+	this->health = _clap.health;
+	this->energy = _clap.energy;
+	return (*this);
+}
+
+ClapTrap::ClapTrap(ClapTrap &_clap)
+{
+	this->name = _clap.name;
+	this->attack_dmg = _clap.attack_dmg;
+	this->health = _clap.health;
+	this->energy = _clap.energy;
 }
 
 void    ClapTrap::attack(const std::string& target)

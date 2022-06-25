@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:49:56 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/06 18:31:48 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/25 13:19:06 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 
 int main(void)
 {
-	DiamondTrap		Trap("dayneeBoiiz");
+	DiamondTrap		Trap;
 	Trap.FragTrap::attack("Doliprane");
 }

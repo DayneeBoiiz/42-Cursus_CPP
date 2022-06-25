@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:29:08 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/06 16:38:56 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/25 12:10:05 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ protected:
 public:
     ClapTrap(void);
     ClapTrap(std::string name);
+	ClapTrap(ClapTrap& _clap);
     ~ClapTrap(void);
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+	ClapTrap & operator = (const ClapTrap& _clap);
 };
 
 #endif

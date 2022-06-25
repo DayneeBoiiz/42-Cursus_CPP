@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:29:47 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/06 16:40:33 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/25 12:47:15 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,23 @@ ClapTrap::ClapTrap(void)
     this->health = 10;
     this->energy = 10;
     this->attack_dmg = 0;
+}
+
+ClapTrap & ClapTrap::operator = (const ClapTrap& _clap)
+{
+	this->name = _clap.name;
+	this->health = _clap.health;
+	this->energy = _clap.energy;
+	this->attack_dmg = _clap.attack_dmg;
+	return (*this);
+}
+
+ClapTrap::ClapTrap(ClapTrap& _clap)
+{
+	this->name = _clap.name;
+	this->health = _clap.health;
+	this->energy = _clap.energy;
+	this->attack_dmg = _clap.attack_dmg;
 }
 
 ClapTrap::ClapTrap(std::string name)

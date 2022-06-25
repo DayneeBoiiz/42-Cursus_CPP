@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:29:47 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/25 12:47:15 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/25 14:18:32 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,11 @@
 
 ClapTrap::ClapTrap(void)
 {
-    std::cout << "'Claptrap' Default consructor called" << std::endl;
+    std::cout << "Default consructor called" << std::endl;
     this->name = "";
     this->health = 10;
     this->energy = 10;
     this->attack_dmg = 0;
-}
-
-ClapTrap & ClapTrap::operator = (const ClapTrap& _clap)
-{
-	this->name = _clap.name;
-	this->health = _clap.health;
-	this->energy = _clap.energy;
-	this->attack_dmg = _clap.attack_dmg;
-	return (*this);
-}
-
-ClapTrap::ClapTrap(ClapTrap& _clap)
-{
-	this->name = _clap.name;
-	this->health = _clap.health;
-	this->energy = _clap.energy;
-	this->attack_dmg = _clap.attack_dmg;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -45,6 +28,23 @@ ClapTrap::ClapTrap(std::string name)
     this->attack_dmg = 0;
     this->health = 10;
     this->energy = 10;
+}
+
+ClapTrap & ClapTrap::operator=(const ClapTrap& _clap)
+{
+	this->name = _clap.name;
+	this->attack_dmg = _clap.attack_dmg;
+	this->health = _clap.health;
+	this->energy = _clap.energy;
+	return (*this);
+}
+
+ClapTrap::ClapTrap(ClapTrap &_clap)
+{
+	this->name = _clap.name;
+	this->attack_dmg = _clap.attack_dmg;
+	this->health = _clap.health;
+	this->energy = _clap.energy;
 }
 
 void    ClapTrap::attack(const std::string& target)
@@ -77,5 +77,5 @@ void    ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap(void)
 {
-    std::cout << "'ClapTrap' Destructor Called" << std::endl;
+    std::cout << "Destructor Called" << std::endl;
 }

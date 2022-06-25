@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:49:56 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/25 12:58:52 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/25 14:34:47 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,10 @@
 
 int main(void)
 {
-    // ClapTrap    Clap;
-    // ScavTrap    Scav("FixGree");
-	FragTrap	Frag("DayneeBoiiz");
+	FragTrap	frag("DayneeBoiiz");
 
-    // Scav.attack("Doliprane");
-	Frag.takeDamage(50);
-	Frag.takeDamage(50);
-	Frag.attack("FixGree");
-	Frag.attack("FixGree");
-	Frag.attack("FixGree");
-	Frag.attack("FixGree");
-	// std::cout << Frag.name << std::endl;
-    // Scav.guardGate();
-	// Frag.highFivesGuys();
+	frag.attack("doliprane");
+	frag.takeDamage(10);
+	frag.attack("doliprane");
+	frag.attack("doliprane");
 }

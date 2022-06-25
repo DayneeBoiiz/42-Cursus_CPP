@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 16:08:18 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/06 16:42:01 by sayar            ###   ########.fr       */
+/*   Created: 2022/06/25 14:25:43 by sayar             #+#    #+#             */
+/*   Updated: 2022/06/25 14:29:56 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 # define FRAGTRAP_HPP
 
 # include "ScavTrap.hpp"
+# include "ClapTrap.hpp"
 
 class	FragTrap : public ClapTrap
 {
 public:
 	FragTrap(void);
-	~FragTrap(void);
 	FragTrap(std::string name);
-	void highFivesGuys(void);
+	FragTrap(FragTrap& _frag);
+	~FragTrap(void);
+	FragTrap & operator = (const FragTrap& _frag);
 };
 
 #endif

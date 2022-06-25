@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:29:47 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/25 13:02:48 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/25 14:18:32 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(void)
 {
-    std::cout << "'Claptrap' Default consructor called" << std::endl;
+    std::cout << "Default consructor called" << std::endl;
     this->name = "";
     this->health = 10;
     this->energy = 10;
@@ -30,14 +30,6 @@ ClapTrap::ClapTrap(std::string name)
     this->energy = 10;
 }
 
-ClapTrap::ClapTrap(ClapTrap& _clap)
-{
-	this->name = _clap.name;
-	this->attack_dmg = _clap.attack_dmg;
-	this->health = _clap.health;
-	this->energy = _clap.energy;
-}
-
 ClapTrap & ClapTrap::operator=(const ClapTrap& _clap)
 {
 	this->name = _clap.name;
@@ -45,6 +37,14 @@ ClapTrap & ClapTrap::operator=(const ClapTrap& _clap)
 	this->health = _clap.health;
 	this->energy = _clap.energy;
 	return (*this);
+}
+
+ClapTrap::ClapTrap(ClapTrap &_clap)
+{
+	this->name = _clap.name;
+	this->attack_dmg = _clap.attack_dmg;
+	this->health = _clap.health;
+	this->energy = _clap.energy;
 }
 
 void    ClapTrap::attack(const std::string& target)
@@ -77,5 +77,5 @@ void    ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap(void)
 {
-    std::cout << "'ClapTrap' Destructor Called" << std::endl;
+    std::cout << "Destructor Called" << std::endl;
 }

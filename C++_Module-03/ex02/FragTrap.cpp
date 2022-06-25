@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 16:24:18 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/25 12:49:56 by sayar            ###   ########.fr       */
+/*   Created: 2022/06/25 14:25:41 by sayar             #+#    #+#             */
+/*   Updated: 2022/06/25 14:34:34 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,32 @@
 
 FragTrap::FragTrap(void)
 {
-	std::cout << "'FragTrap' Default constructor called" << std::endl;
+	std::cout << "'FragTrap' default constructor called" << std::endl;
+}
+
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
+{
+	health = 100;
+	energy = 100;
+	attack_dmg = 30;
+}
+
+FragTrap::FragTrap(FragTrap& _frag)
+{
+	this->health = _frag.health;
+	this->energy = _frag.energy;
+	this->attack_dmg = _frag.attack_dmg;
 }
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "'FragTrap' destructor called" << std::endl;
+	std::cout << "'FragTrap' Destructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap & FragTrap::operator=(const FragTrap& _frag)
 {
-	std::cout << "'FragTrap' Name constructor called" << std::endl;
-	this->name = name;
-	health = 100;
-    energy = 100;
-    attack_dmg = 30;
-}
-
-void	FragTrap::highFivesGuys(void)
-{
-	std::cout << "'FragTrap' Can I get a Highfive?" << std::endl;
+	this->health = _frag.health;
+	this->energy = _frag.energy;
+	this->attack_dmg = _frag.attack_dmg;
+	return (*this);
 }

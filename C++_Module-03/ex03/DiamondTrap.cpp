@@ -5,26 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 18:19:37 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/25 13:13:24 by sayar            ###   ########.fr       */
+/*   Created: 2022/06/25 14:41:03 by sayar             #+#    #+#             */
+/*   Updated: 2022/06/25 14:58:51 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name)
-{
-	std::cout << "'DiamondTrap' name constctor called" << std::endl;
-	this->name = name;
-}
-
 DiamondTrap::DiamondTrap(void)
 {
-	std::cout << "HelloWorld" << std::endl;
-	health = FragTrap::health;
-	energy = ScavTrap::energy;
-	attack_dmg = FragTrap::attack_dmg;
-	std::cout << health << std::endl;
-	std::cout << energy << std::endl;
-	std::cout << attack_dmg << std::endl;
+	std::cout << "'DiamondTrap' Default constructor called" << std::endl;
+}
+
+DiamondTrap::DiamondTrap(std::string name)
+{
+	this->_name = name;
+	this->_name = name += "_clap_name";
+	D_health = FragTrap::health;
+	D_energy = ScavTrap::energy;
+	D_attack_dmg = FragTrap::attack_dmg;
+}
+
+DiamondTrap::DiamondTrap(DiamondTrap& _diam)
+{
+	D_health = _diam.D_health;
+	D_energy = _diam.D_energy;
+	D_attack_dmg = _diam.D_attack_dmg;
+}
+
+DiamondTrap & DiamondTrap::operator=(const DiamondTrap& _diam)
+{
+	D_health = _diam.D_health;
+	D_energy = _diam.D_energy;
+	D_attack_dmg = _diam.D_attack_dmg;
+	return (*this);
+}
+
+DiamondTrap::~DiamondTrap(void)
+{
+	std::cout << "'DiamondTrap' Destructor called" << std::endl;
+}
+
+void DiamondTrap::whoAmI(void)
+{
+	std::cout << 
 }

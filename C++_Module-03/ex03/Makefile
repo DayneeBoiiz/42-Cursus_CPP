@@ -5,30 +5,29 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/06 15:58:01 by sayar             #+#    #+#              #
-#    Updated: 2022/06/06 18:32:29 by sayar            ###   ########.fr        #
+#    Created: 2022/06/25 14:23:35 by sayar             #+#    #+#              #
+#    Updated: 2022/06/25 14:35:10 by sayar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = DiamondTrap
+NAME = FragTrap
 
 CC = c++
 
 FLAGS = -Wall -Werror -Wextra
 
-SRC = 	ClapTrap.cpp\
-		ScavTrap.cpp\
+SRC =	ClapTrap.cpp\
 		main.cpp\
+		ScavTrap.cpp\
 		FragTrap.cpp\
-		DiamondTrap.cpp\
 
 OBJ = ${patsubst %.cpp, %.o, ${SRC}}
 
 all : ${NAME}
 
-.PHONY : all clean fclean
+.PHOMY : all clean fclean re
 
-${NAME} : DiamondTrap.hpp ScavTrap.hpp ClapTrap.hpp FragTrap.hpp ${OBJ}
+${NAME} : ClapTrap.hpp ScavTrap.hpp FragTrap.hpp ${OBJ}
 	${CC} ${FLAGS} ${OBJ} -o ${NAME}
 
 clean :

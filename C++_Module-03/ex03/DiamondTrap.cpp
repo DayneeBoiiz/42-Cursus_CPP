@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 14:41:03 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/30 11:00:16 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/30 11:45:06 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ DiamondTrap::DiamondTrap(std::string name) : FragTrap(name), ScavTrap(name)
 	this->attack_dmg = FragTrap::attack_dmg;
 	this->health = FragTrap::health;
 	this->energy = ScavTrap::energy;
+	std::cout << this->attack_dmg << std::endl;
+	std::cout << this->health << std::endl;
+	std::cout << this->energy << std::endl;
 }
 
 DiamondTrap::~DiamondTrap(void)

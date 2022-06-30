@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 13:45:55 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/25 14:21:32 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/30 10:49:09 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class	ScavTrap : public ClapTrap
+class	ScavTrap : virtual public ClapTrap
 {
 public:
 	ScavTrap(void);

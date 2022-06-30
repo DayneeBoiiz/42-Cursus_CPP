@@ -6,20 +6,19 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:49:56 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/25 14:34:47 by sayar            ###   ########.fr       */
+/*   Updated: 2022/06/30 10:58:08 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-	FragTrap	frag("DayneeBoiiz");
+	DiamondTrap		diam("DayneeBoiiz");
 
-	frag.attack("doliprane");
-	frag.takeDamage(10);
-	frag.attack("doliprane");
-	frag.attack("doliprane");
+	diam.attack("Doliprane");
+	diam.whoAmI();
 }

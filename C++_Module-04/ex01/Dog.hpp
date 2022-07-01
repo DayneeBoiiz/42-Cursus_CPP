@@ -17,7 +17,7 @@
 # include "Brain.hpp"
 
 class	Dog : virtual public Animal
-{
+{+
 private:
 	Brain* DogBrain;
 public:

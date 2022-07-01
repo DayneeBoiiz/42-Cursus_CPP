@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:49:56 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/30 10:58:08 by sayar            ###   ########.fr       */
+/*   Updated: 2022/07/01 14:02:31 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int main(void)
 {
 	DiamondTrap		diam("DayneeBoiiz");
 
-	diam.attack("Doliprane");
-	diam.whoAmI();
+	// diam.attack("Doliprane");
+	// diam.whoAmI();
 }

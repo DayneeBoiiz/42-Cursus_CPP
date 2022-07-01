@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 13:45:55 by sayar             #+#    #+#             */
-/*   Updated: 2022/06/30 10:49:09 by sayar            ###   ########.fr       */
+/*   Updated: 2022/07/01 11:50:43 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ public:
 	ScavTrap(ScavTrap& _scav);
 	~ScavTrap(void);
 	ScavTrap & operator = (const ScavTrap& _scav);
-	void guardGate(void);
+	void 	guardGate(void);
+	void	setEnergy(void);
+	void	attack(std::string name);
 };
 
 #endif

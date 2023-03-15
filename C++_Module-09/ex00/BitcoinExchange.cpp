@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:05:31 by sayar             #+#    #+#             */
-/*   Updated: 2023/03/15 18:22:05 by sayar            ###   ########.fr       */
+/*   Updated: 2023/03/15 19:30:27 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,24 @@ float BitcoinExchange::FindBaseExchange(std::string str) {
 
 }
 
+void	BitcoinExchange::OutputData(std::string BaseDate, float BaseExchange, std::string exchange, std::string date) {
+
+	// std::cout << BaseDate << " " << BaseExchange << " " << exchange << std::endl;
+	(void)BaseExchange;
+	if (!is_valid_date(date))
+		std::cout << "Error: bad input => " << date << std::endl;
+	else if (!BaseDate.compare("Date not found in the Database"))
+		std::cout << date << " => " << "Date not found in the Database" << std::endl;
+	else if (std::stof(exchange) < 0)
+		std::cout << "Error: not a positive number." << std::endl;
+	else if (std::stof(exchange) > 1000)
+		std::cout << "Error: too large a number." << std::endl;
+	else {
+		float result = (std::stof(exchange) * BaseExchange);
+		std::cout << BaseDate << " => " << exchange << " = " << result << std::endl;
+	}
+}
+
 void	BitcoinExchange::ParseDataSyntaxInput(std::string str) {
 	std::string date = str.substr(0, str.find('|') - 1);
 	std::string exchange = str.substr(str.find('|') + 2 , str.length());
@@ -170,7 +188,8 @@ void	BitcoinExchange::ParseDataSyntaxInput(std::string str) {
 	std::string BaseDate = FindBaseDate(date);
 	float BaseExchange = FindBaseExchange(date);
 
-	std::cout << BaseExchange << std::endl;
+	// std::cout << BaseExchange << std::endl;
+	OutputData(BaseDate, BaseExchange, exchange, date);
 	// std::cout << date << " => " << BaseDate << std::endl;
 
 	// ParsedDataInput.insert(std::pair<std::string, float>(date, std::stof(exchange)));
@@ -188,6 +207,7 @@ void	BitcoinExchange::ParseInput(std::string input) {
 			std::getline(read, copy);
 			if (copy != "date | value") {
 				ParseDataSyntaxInput(copy);
+				// exit(0);
 			}
 		}
 		// for (map_it it = ParsedDataInput.begin(); it != ParsedDataInput.end(); it++) {

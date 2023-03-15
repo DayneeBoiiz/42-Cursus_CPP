@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:04:51 by sayar             #+#    #+#             */
-/*   Updated: 2023/03/15 15:25:00 by sayar            ###   ########.fr       */
+/*   Updated: 2023/03/15 19:34:00 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ private:
 
 	std::string 				database;
 	std::multimap<std::string, float>	ParsedDataBase;
-	std::multimap<std::string, float>	ParsedDataInput;
 
 
 public:
@@ -44,8 +43,9 @@ public:
 	float	Exchange(float first, float second);
 
 	std::string FindBaseDate(std::string str);
-	float FindBaseExchange(std::string str);
+	float	FindBaseExchange(std::string str);
 	bool	is_valid_date(std::string date_str);
+	void	OutputData(std::string BaseDate, float BaseExchange, std::string exchange, std::string date);
 };
 
 #endif

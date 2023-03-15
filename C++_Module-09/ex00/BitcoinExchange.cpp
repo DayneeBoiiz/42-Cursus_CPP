@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:05:31 by sayar             #+#    #+#             */
-/*   Updated: 2023/03/15 19:30:27 by sayar            ###   ########.fr       */
+/*   Updated: 2023/03/16 00:21:14 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,11 +144,18 @@ bool BitcoinExchange::is_valid_date(std::string date_str) {
 
 std::string BitcoinExchange::FindBaseDate(std::string str) {
 
-	for (map_it it = ParsedDataBase.begin(); it != ParsedDataBase.end(); it++) {
-		if (it.operator*(). first == str)
-			return (it.operator*().first);
-	}
-	return ("Date not found in the Database");
+	// for (map_it it = ParsedDataBase.begin(); it != ParsedDataBase.end(); it++) {
+	// 	if (it.operator*(). first == str)
+	// 		return (it.operator*().first);
+	// }
+	// return ("Date not found in the Database");
+
+	map_it it = ParsedDataBase.lower_bound(str);
+	if (it.operator*().first != str && it != ParsedDataBase.begin())
+		it--;
+	// std::cout << it.operator*().first << std::endl;
+	return (it.operator*().first);
+
 }
 
 float BitcoinExchange::FindBaseExchange(std::string str) {
@@ -175,7 +182,7 @@ void	BitcoinExchange::OutputData(std::string BaseDate, float BaseExchange, std::
 		std::cout << "Error: too large a number." << std::endl;
 	else {
 		float result = (std::stof(exchange) * BaseExchange);
-		std::cout << BaseDate << " => " << exchange << " = " << result << std::endl;
+		std::cout << date << " => " << exchange << " = " << result << std::endl;
 	}
 }
 
@@ -186,7 +193,7 @@ void	BitcoinExchange::ParseDataSyntaxInput(std::string str) {
 	// if (is_valid_date(date) == false)
 	// 	std::cout << "Error: bad input => " << date << std::endl;
 	std::string BaseDate = FindBaseDate(date);
-	float BaseExchange = FindBaseExchange(date);
+	float BaseExchange = FindBaseExchange(BaseDate);
 
 	// std::cout << BaseExchange << std::endl;
 	OutputData(BaseDate, BaseExchange, exchange, date);

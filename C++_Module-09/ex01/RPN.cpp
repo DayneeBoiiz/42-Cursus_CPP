@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 19:41:00 by sayar             #+#    #+#             */
-/*   Updated: 2023/03/15 22:30:29 by sayar            ###   ########.fr       */
+/*   Updated: 2023/03/16 14:22:28 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,10 @@ bool expression_ends_with_operand(std::string expression) {
         i--;
     }
     if (i < 0) {
-        // Empty or all-whitespace expression, return an error
         return true;
     } else if (isdigit(expression[i])) {
-        // Expression ends with a number, return an error
         return true;
     } else {
-        // Expression ends with an operand, return without an error
         return false;
     }
 }
@@ -73,20 +70,14 @@ int	RPN::evaluate_expression(std::string str) {
 	std::istringstream	ss(str);
 	std::string			token;
 
-	// if (expression_ends_with_operand(str))
-	// 	throw std::runtime_error("Error");
-
-	// CheckValidaty(str);
+	if (expression_ends_with_operand(str))
+		throw std::runtime_error("Error");
 
 	while (ss >> token) {
-
-		// if (ft_strspn(token, "()"))
-		// 	throw std::runtime_error("Error");
 
 		if (token == "+" || token == "-" || token == "/" || token == "*") {
 
 			if (operands.size() < 2) {
-                // Not enough operands for the operator, return an error or throw an exception
                 throw std::runtime_error("Error");
             }
 
@@ -106,6 +97,10 @@ int	RPN::evaluate_expression(std::string str) {
 			}
 		}
 		else {
+			for (size_t i = 0; i != strlen(token.c_str()); i++) {
+				if (!isdigit(token[i]))
+					throw std::runtime_error("Error");
+			}
 			int operand = std::stoi(token);
 			operands.push(operand);
 		}

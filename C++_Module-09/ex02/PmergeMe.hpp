@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:23:26 by sayar             #+#    #+#             */
-/*   Updated: 2023/03/16 16:59:08 by sayar            ###   ########.fr       */
+/*   Updated: 2023/03/16 22:58:35 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class PmergeMe {
 private:
 	std::vector<int>	Input;
 	std::deque<int>		input_d;
+	std::string			InitalInput;
+	std::string			Output;
 
 public:
 
@@ -38,6 +40,9 @@ public:
 	std::vector<int>	merge(std::vector<int> left, std::vector<int> right);
 	std::string			join_strings(char **av, const std::string& delimiter, int ac);
 	bool				hasDuplicate(const std::string &numbers);
+
+	std::string			getBefore(void) const;
+	void				getAfter(std::vector<int> vec);
 
 };
 

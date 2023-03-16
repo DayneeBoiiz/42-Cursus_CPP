@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:23:22 by sayar             #+#    #+#             */
-/*   Updated: 2023/03/16 18:10:47 by sayar            ###   ########.fr       */
+/*   Updated: 2023/03/16 23:00:24 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ int main(int ac, char **av) {
 
 			sort.ParseAv(av, ac);
 			std::vector<int> sorted = sort.merge_insert_sort();
-			// for (size_t i = 0; i < sorted.size(); i++) {
-        	// std::cout << sorted[i] << std::endl;
-    		// }
+			std::cout << "Before:  " << sort.getBefore() << std::endl;
+			sort.getAfter(sorted);
 
 		}
 	}

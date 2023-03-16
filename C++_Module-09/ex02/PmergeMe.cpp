@@ -6,7 +6,7 @@
 /*   By: sayar <sayar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:23:24 by sayar             #+#    #+#             */
-/*   Updated: 2023/03/16 18:15:51 by sayar            ###   ########.fr       */
+/*   Updated: 2023/03/16 22:58:24 by sayar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,17 @@ bool PmergeMe::hasDuplicate(const std::string& numbers) {
     return false;
 }
 
+void	PmergeMe::getAfter(std::vector<int> vec) {
+	std::cout << "After:   ";
+	for (size_t i = 0; i < vec.size(); i++) {
+		std::cout << vec[i] << " ";
+	}
+	std::cout << std::endl;
+}
+
+std::string	PmergeMe::getBefore(void) const {
+	return (this->InitalInput);
+}
 
 std::string	PmergeMe::join_strings(char **av, const std::string &delimiter, int ac) {
 
@@ -113,12 +124,12 @@ std::string	PmergeMe::join_strings(char **av, const std::string &delimiter, int 
 
 void	PmergeMe::ParseAv(char **av, int ac) {
 
-	std::string string = join_strings(av, " ", ac);
+	InitalInput = join_strings(av, " ", ac);
 
-	std::cout << string << std::endl;
-	if (hasDuplicate(string))
+	// std::cout << string << std::endl;
+	if (hasDuplicate(InitalInput))
 		throw std::runtime_error("Error Duplicate");
-	std::istringstream	ss(string);
+	std::istringstream	ss(InitalInput);
 	std::string			token;
 
 	while (ss >> token) {
